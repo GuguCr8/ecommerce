@@ -4,6 +4,7 @@ package com.zara.ecommerce.services.impl;
 import com.zara.ecommerce.entities.Prices;
 import com.zara.ecommerce.repositories.PriceJpaRepository;
 import com.zara.ecommerce.responses.PriceResponse;
+import com.zara.ecommerce.services.PriceService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
-public class PriceServiceImpl {
+public class PriceServiceImpl implements PriceService {
 
     private final PriceJpaRepository repository;
 
