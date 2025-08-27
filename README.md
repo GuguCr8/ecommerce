@@ -93,6 +93,12 @@ Loaded on startup from `schema.sql` + `data.sql`:
 | T4 | `2020-06-15T10:00:00` | 19 | 5  | 14 ms (73.7%) |
 | T5 | `2020-06-16T21:00:00` | 33 | 10 | 23 ms (69.7%) |
 
+## Unit test and unit integracion in controller
+Unit (Service · JUnit 5 + Mockito): Verifies the logic of PriceServiceImpl and the Prices → PriceResponse mapping, 
+using Given–When–Then (AAA) and JPA repository mocks. It also checks that the repository is called with the correct parameters.
+
+Integration (Endpoint · SpringBootTest + MockMvc + H2): Runs the real flow controller → service → repository → JPA → H2,
+with data loaded from schema.sql + data.sql. Validates the 5 specified cases (T1–T5) and 400/404 error scenarios.
 
 ## Next Versions API
 @RestControllerAdvice with Problem Details (RFC 7807) for consistent error responses and client-specific formats (mobile/web).
